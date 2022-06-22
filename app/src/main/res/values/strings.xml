@@ -21,6 +21,18 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="registro_de_cliente">REGISTRO DE CLIENTE</string>
+    <string name="n_documento_o_ruc">N° documento o RUC:</string>
+    <string name="ingrese_su_nombre_o_raz_n_social">Ingrese su nombre o razón social</string>
+    <string name="ingrese_su_dni_o_ruc">Ingrese su DNI o RUC</string>
+    <string name="ingrese_su_direcci_n">Ingrese su dirección</string>
+    <string name="ingrese_su_email">Ingrese su email</string>
+    <string name="ingrese_su_tel_fono">Ingrese su teléfono</string>
+    <string name="ingrese_su_contrase_a">Ingrese su contraseña</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="registrar_usuario">Registrar usuario</string>
+    <string name="registrar_cliente">Registrar cliente</string>
 
 
 </resources>

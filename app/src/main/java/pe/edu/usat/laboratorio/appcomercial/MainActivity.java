@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import de.hdodenhof.circleimageview.CircleImageView;
+import pe.edu.usat.laboratorio.appcomercial.logica.Sesion;
 import pe.edu.usat.laboratorio.appcomercial.util.Helper;
 import pe.edu.usat.laboratorio.appcomercial.util.ImageDonwload;
 
@@ -59,13 +60,15 @@ public class MainActivity extends AppCompatActivity
         txtEmail = cabeceraMenu.findViewById(R.id.loginUsuario);
 
         //Mostrar los datos del usuario: Nombre y su email
-        txtNombre.setText("Sesion.NOMBRE");
-        txtEmail.setText("Sesion.EMAIL");
+        txtNombre.setText(Sesion.NOMBRE);
+        txtEmail.setText(Sesion.EMAIL);
 
         /*
         //Mostrar la foto del usuario que ha iniciado sesión (descargar desde el servicio web)
         ImageDonwload.ImageDownloadTask imageDownloadTask = new ImageDonwload.ImageDownloadTask(foto, "url foto");
         imageDownloadTask.execute();*/
+
+        foto.setImageBitmap(Helper.base64ToImage(Sesion.IMG));
 
         //Ejecutar a la clase ConfiguracionTask para acceder al valor del IGV
         /*Configuracion.ConfiguracionTask configuracionTask = new Configuracion.ConfiguracionTask("1");

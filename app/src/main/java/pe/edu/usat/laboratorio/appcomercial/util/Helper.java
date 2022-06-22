@@ -34,6 +34,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -148,7 +149,7 @@ public class Helper {
         return result.toString();
     }
 
-    public Bitmap base64ToImage(String image){
+    public static Bitmap base64ToImage(String image){
         try{
             String imageDataBytes = image.substring(image.indexOf(",") + 1);
             InputStream stream = new ByteArrayInputStream(Base64.decode(imageDataBytes.getBytes(), Base64.DEFAULT));
@@ -510,5 +511,15 @@ public class Helper {
             StrictMode.setThreadPolicy(policy);
         }
     }
+
+    public static String imageToBase64(Bitmap bitmap){
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        String imageDecode = Base64.encodeToString(byteArray, Base64.DEFAULT);
+        return imageDecode;
+    }
+
+
 
 }
