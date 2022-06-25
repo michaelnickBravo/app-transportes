@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SolicitudMapaActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrarCliente"
             android:exported="false" />
         <activity
@@ -38,7 +41,10 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main_menu"
-            android:theme="@style/Theme.AppNavigationDrawerActivity.NoActionBar" />
+            android:theme="@style/Theme.AppNavigationDrawerActivity.NoActionBar" /> <!-- API KEY para utilizar google maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>

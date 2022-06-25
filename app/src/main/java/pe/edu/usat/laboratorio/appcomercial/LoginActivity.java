@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -394,6 +395,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             Sesion.TELEFONO = jsonObjectDatosUsuario.getString("telefono");
                             Sesion.TIPO_DOC = jsonObjectDatosUsuario.getString("tipo_doc");
                             Sesion.TOKEN = jsonObjectDatosUsuario.getString("token");
+                            Sesion.TARIFA = jsonObjectDatosUsuario.getDouble("precio_tn_kg");
+                            Sesion.TARIFA_ID = jsonObjectDatosUsuario.getInt("tarifa_id");
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                         }else if (Objects.equals(Sesion.TIPO_USUARIO, "oficinista")) {

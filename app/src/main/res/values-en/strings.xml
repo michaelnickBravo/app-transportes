@@ -35,4 +35,19 @@
     <string name="registrarse">Registrarse</string>
     <string name="registrar_usuario">Registrar usuario</string>
     <string name="registrar_cliente">Registrar cliente</string>
+    <string name="registro_de_solicitud_de_carga">REGISTRO DE SOLICITUD DE CARGA</string>
+    <string name="descripci_n_de_la_carga">Descripción de la carga</string>
+    <string name="clase_de_carga">Clase de carga:</string>
+    <string name="tipo_de_carga">Tipo de carga:</string>
+    <string name="categoria_de_carga">Categoria de carga:</string>
+    <string name="peso_de_la_carga">Peso de la carga</string>
+    <string name="fecha_de_partida">Fecha de partida</string>
+    <string name="hora_de_partida">Hora de partida</string>
+    <string name="fech_de_partida">Fech. de partida</string>
+    <string name="direcci_n_de_partida">Dirección de partida</string>
+    <string name="direcci_n_de_llegada">Dirección de llegada</string>
+    <string name="monto_total">Monto total</string>
+    <string name="registrar_solicitud_de_carga">Registrar solicitud de carga</string>
+    <string name="categ_de_carga">Categ. de carga:</string>
+    <string name="distancia_a_recorrer">Distancia a recorrer</string>
 </resources>

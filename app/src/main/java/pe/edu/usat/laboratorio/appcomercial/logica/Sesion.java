@@ -13,6 +13,8 @@ public class Sesion {
     public static String TIPO_DOC;
     public static String TIPO_USUARIO;
     public static String TOKEN;
+    public static double TARIFA;
+    public static int TARIFA_ID;
 
 }
 

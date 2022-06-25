@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -117,13 +118,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_ventas) {
-            //Llamar al fragment de catálogo de productos
-            /*CatalogoProductoFragment fragment = new CatalogoProductoFragment();
+        if (id == R.id.nav_registrar_solicitud) {
+            //Llamar al fragment de registrar solicitudes de carga
+            RegistrarSolicitudFragment registrarSolicitudFragment = new RegistrarSolicitudFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.contenedor, fragment);
-            fragmentTransaction.commit();*/
-            Toast.makeText(this, "test ventas", Toast.LENGTH_SHORT).show();
+            fragmentTransaction.replace(R.id.contenedor, registrarSolicitudFragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_productos) {
 
         } else if (id == R.id.nav_clientes) {
@@ -131,10 +131,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
