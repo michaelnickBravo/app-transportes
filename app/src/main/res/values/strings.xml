@@ -50,6 +50,15 @@
     <string name="registrar_solicitud_de_carga">Registrar solicitud de carga</string>
     <string name="categ_de_carga">Categ. de carga:</string>
     <string name="distancia_a_recorrer">Distancia a recorrer</string>
+    <string name="registrar_solicitud">Registrar solicitud</string>
+    <string name="listar_solicitudes">Listar solicitudes</string>
+    <string name="direcci_n_de_llegadas">Dirección de llegada:</string>
+    <string name="direcci_n_de_partidas">Dirección de partida:</string>
+    <string name="fecha_de_partidas">Fecha de partida:</string>
+    <string name="hora_de_partidas">Hora de partida:</string>
+    <string name="monto">Monto:</string>
+    <string name="peso">Peso:</string>
+    <string name="tarifa">Tarifa:</string>
 
 
 </resources>

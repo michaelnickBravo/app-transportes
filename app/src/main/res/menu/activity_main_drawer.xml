@@ -8,12 +8,12 @@
         <item
             android:id="@+id/nav_registrar_solicitud"
             android:icon="@drawable/ic_ventas"
-            android:title="Registrar solicitud" />
+            android:title="@string/registrar_solicitud" />
 
         <item
-            android:id="@+id/nav_productos"
+            android:id="@+id/nav_listar_solicitud"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Productos" />
+            android:title="@string/listar_solicitudes" />
         <item
             android:id="@+id/nav_clientes"
             android:icon="@drawable/ic_menu_gallery"

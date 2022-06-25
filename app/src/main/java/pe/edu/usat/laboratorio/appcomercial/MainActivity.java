@@ -124,8 +124,11 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.contenedor, registrarSolicitudFragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_productos) {
-
+        } else if (id == R.id.nav_listar_solicitud) {
+            ListaSolicitudesFragment fragment = new ListaSolicitudesFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.contenedor, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_clientes) {
 
         } else if (id == R.id.nav_slideshow) {
