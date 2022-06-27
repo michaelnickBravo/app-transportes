@@ -522,4 +522,18 @@ public class Helper {
 
 
 
+    public static String formatearDMA_to_AMD(String fecha){
+        String a = fecha.substring(fecha.length()-4);
+        String m = fecha.substring(3,5);
+        String d = fecha.substring(0, 2);
+        return  a+"/"+m+"/"+d;
+    }
+
+    public static String formatearAMD_to_DMA(String fecha){
+        String d = fecha.substring(fecha.length()-2);
+        String m = fecha.substring(5,7);
+        String a = fecha.substring(0,4);
+        return  a+"/"+m+"/"+d;
+    }
+
 }
