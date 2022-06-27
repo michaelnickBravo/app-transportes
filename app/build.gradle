@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //Librerias para utilizar la plataforma de google maps
     implementation 'com.google.android.gms:play-services-maps:18.0.2'

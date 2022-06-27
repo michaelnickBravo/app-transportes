@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_listado"
+            android:icon="@drawable/ic_carga_conductor"
+            android:title="Servicio de carga" />
+
+        <item
+            android:id="@+id/nav_listado_antendidas"
+            android:icon="@drawable/ic_carga_conductor"
+            android:title="Servicio de carga atendiendo" />
+        <item
+            android:id="@+id/nav_reportar_estado"
+            android:icon="@drawable/ic_vehiculo_conductor"
+            android:title="Reportar estado vehiculo" />
+        <item
+            android:id="@+id/nav_reportar_ubicacion"
+            android:icon="@drawable/ic_reportarubicacion_conductor"
+            android:title="Reportar ubicacion" />
+
+    </group>
+
+    <item android:title="Sesion">
+        <menu>
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/ic_cerrar_sesion"
+                android:title="Cerrar Sesion" />
+        </menu>
+    </item>
+
+</menu>

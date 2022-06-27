@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.location.Address;
-import android.location.Geocoder;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -58,15 +56,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import pe.edu.usat.laboratorio.appcomercial.R;
 
 public class Helper {
     public static final String APP_NAME = "Comercial: ServiciosWeb";
     //public static final String BASE_URL_WS = "http://10.0.2.2:3007";
-    public static final String BASE_URL_WS = "http://192.168.0.8:82";
+    public static final String BASE_URL_WS = "http://192.168.0.8:81";
 
     public String requestHttpPost(String requestURL, HashMap<String, String> postDataParams) throws JSONException {
 
@@ -524,33 +520,6 @@ public class Helper {
         return imageDecode;
     }
 
-    public static String obtenerDireccionMapa(Context context, double latitud, double longitud) {
-        String strAdd = "";
-        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
-        try {
-            List<Address> addresses = geocoder.getFromLocation(latitud, longitud, 1);
-            if (addresses != null) {
-                Address returnedAddress = addresses.get(0);
-                StringBuilder strReturnedAddress = new StringBuilder("");
 
-                for (int i = 0; i <= returnedAddress.getMaxAddressLineIndex(); i++) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
-                }
-                strAdd = strReturnedAddress.toString();
-            } else {
-                Log.w("Dirección", "No se ha retornado la dirección!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return strAdd.substring(0,strAdd.length()-1);
-    }
-
-    public static String formatearDMA_to_AMD(String fecha){
-        String a = fecha.substring(fecha.length()-4);
-        String m = fecha.substring(3,5);
-        String d = fecha.substring(0, 2);
-        return  a+"/"+m+"/"+d;
-    }
 
 }
