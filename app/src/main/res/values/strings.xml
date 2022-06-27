@@ -60,5 +60,9 @@
     <string name="peso">Peso:</string>
     <string name="tarifa">Tarifa:</string>
 
-
+    <string-array name="filtro_cliente">
+        <item>DNI o RUC</item>
+        <item>Nombre o razon social</item>
+        <item>Estado</item>
+    </string-array>
 </resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_tarifas"
+            android:icon="@drawable/tarifa"
+            android:title="Gestion de tarifas" />
+
+        <item
+            android:id="@+id/nav_conductores_vehiculos"
+            android:icon="@drawable/conductor"
+            android:title="Vehiculos y Conductores" />
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/cliente"
+            android:title="Gestion de Clientes" />
+        <item
+            android:id="@+id/nav_solictudes"
+            android:icon="@drawable/stc"
+            android:title="Gestion de STC" />
+
+        <item
+            android:id="@+id/nav_estados_solicitudes"
+            android:icon="@drawable/estado"
+            android:title="Gestion de estados de STC" />
+
+        <item
+            android:id="@+id/nav_geolocalizacion"
+            android:icon="@drawable/ic_reportarubicacion_conductor"
+            android:title="Geolocalizacion de vehiculos" />
+
+    </group>
+
+    <item android:title="Sesion">
+        <menu>
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/ic_cerrar_sesion"
+                android:title="Cerrar Sesion" />
+        </menu>
+    </item>
+
+</menu>

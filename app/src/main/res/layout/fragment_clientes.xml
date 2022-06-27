@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tools:context=".clientes">
+
+
+        <TextView
+            android:id="@+id/titulo_formulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="LISTA DE CLIENTES"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/boton_buscar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="100dp" />
+
+        <EditText
+            android:id="@+id/tipoB"
+            android:layout_width="105dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Buscar por:"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="45dp"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="181dp"
+            android:layout_height="34dp"
+            tools:layout_editor_absoluteX="170dp"
+            tools:layout_editor_absoluteY="55dp"
+            tools:ignore="MissingConstraints"
+            android:entries="@array/filtro_cliente"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_clientes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/cardview_clientes" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
