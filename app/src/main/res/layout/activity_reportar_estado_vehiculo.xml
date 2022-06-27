@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:context=".ReportarEstadoVehiculo">
+
+        <Space
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        </Space>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:text="Placas de vehiculo:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Spinner
+                    android:id="@+id/spPlacasVehiculos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+                <TextView
+                    android:text="Estados de vehiculos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp">
+                </Space>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtEstadoVehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingrese aqui el estado de su vehiculo actualmente"
+                    android:textSize="13dp"
+                    />
+
+                <Button
+                    android:id="@+id/btnReportar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="REPORTAR ESTADO"
+                    android:textColor="#fff" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="10dp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+</LinearLayout>

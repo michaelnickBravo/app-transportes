@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="3dp"
+        android:paddingTop="3dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CLIENTE"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtnumerodocumento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Numero de documento" />
+
+            <Space
+                 android:layout_width="match_parent"
+                 android:layout_height="3dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtClaseCarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clase de carga" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/txtTipoCarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="Tipo de carga" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDescripcionCarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descripcion de carga" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/txtCategoriaCarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="Categoria de carga" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Id de solicitud" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/txtPesoCarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="Peso de carga" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+            <TextView
+                android:id="@+id/txtPlaca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Placa del vehiculo" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+            <TextView
+                android:id="@+id/txtDireccionPartida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direccion de Partida" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+            <TextView
+                android:id="@+id/txtFechaPartida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Partida" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+            <TextView
+                android:id="@+id/txtDireccionLlegada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direccion de Llegada" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

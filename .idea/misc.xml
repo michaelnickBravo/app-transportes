@@ -3,23 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/drawable/ic_menu_camera.xml" value="0.3635" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/activity_conductor_mapa.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/activity_login.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/activity_main.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/activity_main_conductor.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/activity_main_oficinista.xml" value="0.25" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/activity_registrar_cliente.xml" value="0.25" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/cardview_clientes.xml" value="0.25" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/cardview_conductor.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/cardview_producto.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/cardview_solicitud_cliente.xml" value="0.25" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/content_main.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/fragment_catalogo_producto.xml" value="0.12552083333333333" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/fragment_clientes.xml" value="0.25" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/fragment_lista_solicitudes.xml" value="0.2" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/fragment_registrar_solicitud.xml" value="0.25" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/fragment_solicitudes_servicio_carga_conductor.xml" value="0.2" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/layout/fragment_solicitudes_servicio_cargas_atendidas_conductor.xml" value="0.2" />
+        <entry key="..\:/9 ciclo/DAM/Proyecto Final/app-movil/app/src/main/res/menu/activity_main_drawer_oficinista.xml" value="0.12552083333333333" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/activity_login.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/activity_main_conductor.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/activity_main_oficinista.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/activity_registrar_cliente.xml" value="0.3625" />
-        <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/activity_solicitud_mapa.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/app_bar_main.xml" value="0.3625" />
-        <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/cardview_producto.xml" value="0.3625" />
-        <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/cardview_solicitud_cliente.xml" value="0.2965811965811966" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/content_main.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/fragment_catalogo_producto.xml" value="0.3625" />
+<<<<<<< HEAD
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/fragment_lista_solicitudes.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/fragment_pago_solicitud.xml" value="0.3625" />
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/fragment_registrar_solicitud.xml" value="0.3625" />
+=======
+>>>>>>> 8d11d03ddc9ab7f6c89373b6fe9ade3b5413e575
         <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/layout/nav_header_main.xml" value="0.3625" />
-        <entry key="..\:/Documentos/Desarrollo_Aplicaciones_moviles/Proyecto final desarrollo app moviles/AppProyectoFinal/app/src/main/res/menu/activity_main_drawer.xml" value="0.3625" />
       </map>
     </option>
   </component>

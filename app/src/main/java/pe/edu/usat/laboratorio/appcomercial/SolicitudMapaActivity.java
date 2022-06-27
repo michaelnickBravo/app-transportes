@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -121,7 +122,7 @@ public class SolicitudMapaActivity extends AppCompatActivity implements View.OnC
         this.longitud = latLng.longitude;
 
         //Capturar la dirección, según la latitud y longitud
-        this.direccion = Helper.obtenerDireccionMapa(this, this.latitud, this.longitud);
+        //this.direccion = Helper.obtenerDireccionMapa(this, this.latitud, this.longitud);
 
         Toast.makeText(this, "Dirección: " + this.direccion, Toast.LENGTH_SHORT).show();
     }
@@ -136,7 +137,7 @@ public class SolicitudMapaActivity extends AppCompatActivity implements View.OnC
         this.longitud = marker.getPosition().longitude;
 
         //Capturar la dirección, según la latitud y longitud
-        this.direccion = Helper.obtenerDireccionMapa(this, this.latitud, this.longitud);
+        //this.direccion = Helper.obtenerDireccionMapa(this, this.latitud, this.longitud);
 
         Toast.makeText(this, "Dirección: " + this.direccion, Toast.LENGTH_SHORT).show();
     }
