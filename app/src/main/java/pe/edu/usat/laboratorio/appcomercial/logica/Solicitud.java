@@ -1,10 +1,20 @@
 package pe.edu.usat.laboratorio.appcomercial.logica;
 
+import java.util.ArrayList;
+
 public class Solicitud {
 
-    private String categoria, clase, descripcionCarga, direccionLlegada, direccionPartida, fecaPartida, horaPartida, tipo;
+    private String categoria, clase, descripcionCarga, direccionLlegada, direccionPartida, fecaPartida, horaPartida, tipo, hora_fecha;
     private int id;
     private double monto, pesoCarga, tarifa;
+
+    public String getHora_fecha() {
+        return hora_fecha;
+    }
+
+    public void setHora_fecha(String hora_fecha) {
+        this.hora_fecha = hora_fecha;
+    }
 
     public String getCategoria() {
         return categoria;
