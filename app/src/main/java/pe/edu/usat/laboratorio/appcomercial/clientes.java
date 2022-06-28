@@ -4,14 +4,20 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,7 +28,6 @@ import java.util.HashMap;
 import pe.edu.usat.laboratorio.appcomercial.adaptador.AdaptadorListaClientes;
 
 import pe.edu.usat.laboratorio.appcomercial.logica.Cliente;
-import pe.edu.usat.laboratorio.appcomercial.logica.ServicioCargaConductor;
 import pe.edu.usat.laboratorio.appcomercial.logica.Sesion;
 import pe.edu.usat.laboratorio.appcomercial.util.Helper;
 
@@ -30,6 +35,8 @@ import pe.edu.usat.laboratorio.appcomercial.util.Helper;
 
 public class clientes  extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     RecyclerView clientesRecyclerView;
+    EditText EditTextBusqueda;
+    Spinner spinnerTipoBusqueda;
 
     ArrayList<Cliente> listaServicioWS;
     AdaptadorListaClientes adaptador;
@@ -44,7 +51,9 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -59,13 +68,6 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
         clientesRecyclerView.setHasFixedSize(true);
         clientesRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
-        swipeRefreshLayoutSC = view.findViewById(R.id.swipeRefreshLayoutSC);
-        swipeRefreshLayoutSC.setColorScheme(
-                android.R.color.holo_red_light,
-                android.R.color.holo_green_light,
-                android.R.color.holo_blue_light
-        );
-        swipeRefreshLayoutSC.setOnRefreshListener(this);
 
         //llamar al metodo para mostrar el catalogo
         listarClientes();
@@ -86,14 +88,45 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
     }
 
     private class clientesTask extends AsyncTask<Void, Void, Boolean> {
+        public int getTipoB() {
+            return tipoB;
+        }
+
+        public void setTipoB(int tipoB) {
+            this.tipoB = tipoB;
+        }
+
+        public String getBusqueda() {
+            return busqueda;
+        }
+
+        public void setBusqueda(String busqueda) {
+            this.busqueda = busqueda;
+        }
+
+        public  int tipoB=0;
+        public  String busqueda;
 
         @Override
         protected Boolean doInBackground(Void... voids) {
             boolean resultado = false;
             try {
-                String URL_WS_clientes = Helper.BASE_URL_WS + "/cliente/listar";
+                String URL_WS_clientes="";
                 HashMap<String, String> parametros = new HashMap<>();
-                //parametros.put("num_brevete", Sesion.NUM_BREVETE);
+                Log.e("TIPO", String.valueOf(tipoB));
+                Log.e("ESTADO", String.valueOf(busqueda));
+                if(tipoB==0){
+                    URL_WS_clientes = Helper.BASE_URL_WS + "/cliente/listar";
+                    //parametros.put("token", Sesion.TOKEN);
+
+                }else{
+                    if(tipoB==1){
+                        URL_WS_clientes = Helper.BASE_URL_WS + "/cliente/listar/estado";
+                        //parametros.put("token", Sesion.TOKEN);
+                        parametros.put("estado_id", busqueda);
+                    }
+                }
+
 
                 //realizar la peticion del servicio web
                 String resultadoJSON = new Helper().requestHttpPost(URL_WS_clientes, parametros);
@@ -130,7 +163,7 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
                 } else {
                     //retornar un valor falso (false), cuando no hay registro
                     //Toast.makeText(SolicitudesServicioCargaConductor.this.getContext(), "ACTUALMENTE NO SE ENCUENTRAN ATENDIENDO UNA CARGA", Toast.LENGTH_SHORT).show();
-                    dialog.setMessage("NO REGISTRAR UN CLIENTE");
+                    dialog.setMessage("ERROR");
                     dialog.setCancelable(true);
                     resultado = false;
                 }
@@ -161,10 +194,12 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
     private void listarClientes() {
         //mostrar un cuadro de dialogo que se esta descargando el catalogo de productos
 
+
+
         dialog = new ProgressDialog(this.getContext());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
-        dialog.setMessage("Descargando la lista de solicitud de servicio, por favor espere");
+        dialog.setMessage("Descargando la lista de clientes, por favor espere");
 
         dialog.setCancelable(true);
         dialog.show();
@@ -177,7 +212,9 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
         clientesRecyclerView.setAdapter(adaptador);
 
         //ejecutar la clase
-        new clientesTask().execute();
-    }
+        clientesTask clasee=new clientesTask();
 
+        new clientesTask().execute();
+
+    }
 }
