@@ -39,7 +39,7 @@ public class AdaptadorListaClientes extends RecyclerView.Adapter<AdaptadorListaC
         holder.txtDni.setText(solicitud.getDocumento());
         holder.txtTipo.setText(solicitud.getTipo());
         holder.txtDireccion.setText(solicitud.getDireccion());
-        holder.txtTelefono.setText("S/."+solicitud.getTelefono());
+        holder.txtTelefono.setText(solicitud.getTelefono());
         holder.txtEstado.setText(solicitud.getEstado());
 
     }

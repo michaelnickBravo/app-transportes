@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".PagoSolicitudFragment">
+
+    <TextView
+        android:id="@+id/titulo_formulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pago_de_solicitud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_view_voucher"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toBottomOf="@id/titulo_formulario"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/placeholder"/>
+
+    <EditText
+        android:id="@+id/text_view_nombre_entidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_de_la_entidad_financiera"
+        app:layout_constraintTop_toBottomOf="@id/img_view_voucher"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/text_view_num_operacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/n_mero_de_operaci_n"
+        app:layout_constraintTop_toBottomOf="@id/text_view_nombre_entidad"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_solicitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/solicitud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/spinner_solicitud"
+        app:layout_constraintTop_toTopOf="@id/spinner_solicitud"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_solicitud"
+        android:layout_marginEnd="5dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_solicitud"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_view_num_operacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_solicitud"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/button_registrar_pago"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_solicitud"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="@string/registrar_pago"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

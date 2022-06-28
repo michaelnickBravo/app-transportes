@@ -59,6 +59,12 @@
     <string name="monto">Monto:</string>
     <string name="peso">Peso:</string>
     <string name="tarifa">Tarifa:</string>
+    <string name="pago_de_solicitud">Pago de solicitud</string>
+    <string name="nombre_de_la_entidad_financiera">Nombre de la entidad financiera</string>
+    <string name="n_mero_de_operaci_n">Número de operación</string>
+    <string name="solicitud">Solicitud:</string>
+    <string name="pagar_solicitud">Pagar solicitud</string>
+    <string name="registrar_pago">Registrar pago</string>
 
     <string-array name="filtro_cliente">
         <item>DNI o RUC</item>
