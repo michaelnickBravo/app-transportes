@@ -119,7 +119,12 @@ public class MainActivityOficinista extends AppCompatActivity implements Navigat
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.contenedor, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_reportar_estado) {
+        }else if (id == R.id.nav_conductores_vehiculos){
+            VehiculosConductoresFrag fragment = new VehiculosConductoresFrag();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.contenedor, fragment);
+            fragmentTransaction.commit();
+        }else if (id == R.id.nav_reportar_estado) {
 
         } else if (id == R.id.nav_reportar_ubicacion) {
 

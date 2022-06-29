@@ -37,7 +37,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTransTheme" parent="Theme.AppNavigationDrawerActivity" >
+    <style name="AppThemeCon" parent="Theme.AppNavigationDrawerActivity" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

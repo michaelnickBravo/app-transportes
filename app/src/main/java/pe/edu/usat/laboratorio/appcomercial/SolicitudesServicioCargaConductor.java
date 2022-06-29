@@ -140,7 +140,7 @@ public class SolicitudesServicioCargaConductor extends Fragment implements View.
                 }else{
                     //retornar un valor falso (false), cuando no hay registro
                     //Toast.makeText(SolicitudesServicioCargaConductor.this.getContext(), "ACTUALMENTE NO SE ENCUENTRAN ATENDIENDO UNA CARGA", Toast.LENGTH_SHORT).show();
-                    dialog.setMessage("NO REGISTRAR UNA CARGA");
+                    dialog.setMessage("ACTUALMENTE NO SE ENCUENTRAN ATENDIENDO UNA CARGA");
                     dialog.setCancelable(true);
                     resultado = false;
                 }

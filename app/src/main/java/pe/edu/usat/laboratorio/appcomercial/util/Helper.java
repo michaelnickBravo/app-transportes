@@ -62,7 +62,7 @@ import pe.edu.usat.laboratorio.appcomercial.R;
 public class Helper {
     public static final String APP_NAME = "Comercial: ServiciosWeb";
     //public static final String BASE_URL_WS = "http://10.0.2.2:3007";
-    public static final String BASE_URL_WS = "http://192.168.0.8:81";
+    public static final String BASE_URL_WS = "http://192.168.0.16:81";
 
     public String requestHttpPost(String requestURL, HashMap<String, String> postDataParams) throws JSONException {
 
@@ -328,8 +328,26 @@ public class Helper {
     }
 
 
+    public static void mensajeConfirmacion(Context context, String message, String bt_ok, String bt_cancel, final Runnable if_ok){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(message)
+                .setCancelable(false)
+                .setPositiveButton(bt_ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if_ok.run();
+                    }
+                }).setNegativeButton(bt_cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel(); //close dialog
+            }
+        });
 
-
+        //show dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     public static void habilitarDirectivasInternetX(){
         /*Si la versión del SO es mayor a la versión de GINGERBARD, entonces habilita una politica especial para conectarse a internet*/

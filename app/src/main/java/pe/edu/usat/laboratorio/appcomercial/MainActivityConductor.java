@@ -1,5 +1,6 @@
 package pe.edu.usat.laboratorio.appcomercial;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -75,11 +76,6 @@ public class MainActivityConductor extends AppCompatActivity implements Navigati
 
         foto.setImageBitmap(Helper.base64ToImage(Sesion.IMG));
 
-        PrincipalConductor fragment = new PrincipalConductor();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.contenedor, fragment);
-        fragmentTransaction.commit();
-
     }
 
     @Override
@@ -140,7 +136,8 @@ public class MainActivityConductor extends AppCompatActivity implements Navigati
             fragmentTransaction.replace(R.id.contenedor, fragment);
             fragmentTransaction.commit();
         } else if (id == R.id.nav_reportar_estado) {
-
+            Intent intent = new Intent(this, ReportarEstadoVehiculo.class);
+            this.startActivity(intent);
         } else if (id == R.id.nav_reportar_ubicacion) {
 
         } else if (id == R.id.nav_salir) {

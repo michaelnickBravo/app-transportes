@@ -161,7 +161,7 @@ public class ReportarEstadoVehiculo extends AppCompatActivity implements View.On
                     spPlacasVehiculos.setAdapter(adaptador);
 
                 }else {
-                    Toast.makeText(ReportarEstadoVehiculo.this, "No se ha podido descargar la lista de placas", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ReportarEstadoVehiculo.this, "Actualmente no tiene vehiculos asignados", Toast.LENGTH_SHORT).show();
                 }
             }catch (Exception e){
                 e.printStackTrace();
@@ -184,20 +184,21 @@ public class ReportarEstadoVehiculo extends AppCompatActivity implements View.On
         protected Boolean doInBackground(Void... voids) {
             boolean resultado= false;
             try {
-                String URL_WS_Reportar = Helper.BASE_URL_WS + "/vehiculo/actualizar/estado";
-                HashMap<String,String> parametros = new HashMap<>();
-                parametros.put("placa", this.placa);
-                parametros.put("estado", this.estado);
 
-                //realizar la peticion al servicio web
-                String respuestaJSONReportar = new Helper().requestHttpPost(URL_WS_Reportar,parametros);
+                    String URL_WS_Reportar = Helper.BASE_URL_WS + "/vehiculo/actualizar/estado";
+                    HashMap<String,String> parametros = new HashMap<>();
+                    parametros.put("placa", this.placa);
+                    parametros.put("estado", this.estado);
 
-                //Convertir la respuestaJSON del ws en JSON String a JSON Object
-                JSONObject json = new JSONObject(respuestaJSONReportar);
+                    //realizar la peticion al servicio web
+                    String respuestaJSONReportar = new Helper().requestHttpPost(URL_WS_Reportar,parametros);
 
-                Log.d("ReportarEstado",json.toString());
+                    //Convertir la respuestaJSON del ws en JSON String a JSON Object
+                    JSONObject json = new JSONObject(respuestaJSONReportar);
 
-                resultado = json.getBoolean("status");
+                    Log.e("ReportarEstado",json.toString());
+
+                    resultado = json.getBoolean("status");
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -240,8 +241,12 @@ public class ReportarEstadoVehiculo extends AppCompatActivity implements View.On
         final String placas = String.valueOf(Vehiculo.listaVehiculos.get(spPlacasVehiculos.getSelectedItemPosition()).getPlaca());
         final String estado = txtEstadoVehiculo.getText().toString();
 
-        ReportarEstadoVehiculo.ReportarEstadoTask reportarEstadoTask = new ReportarEstadoVehiculo.ReportarEstadoTask(placas, estado);
-        reportarEstadoTask.execute();
+        if(estado.equals("")){
+                Toast.makeText(ReportarEstadoVehiculo.this, "DEBE INGRESAR UN ESTADO", Toast.LENGTH_SHORT).show();
+        }else {
+            ReportarEstadoVehiculo.ReportarEstadoTask reportarEstadoTask = new ReportarEstadoVehiculo.ReportarEstadoTask(placas, estado);
+            reportarEstadoTask.execute();
+        }
     }
 
    /* @Override
