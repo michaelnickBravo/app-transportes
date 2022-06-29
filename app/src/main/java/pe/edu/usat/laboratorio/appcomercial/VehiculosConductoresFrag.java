@@ -69,6 +69,12 @@ public class VehiculosConductoresFrag extends Fragment implements View.OnClickLi
                 break;
 
             case R.id.btnListarVehiculos:
+                ListadoVehiculosO fragment1 = new ListadoVehiculosO();
+                FragmentManager fragmentManager1 = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                fragmentTransaction1.replace(R.id.contenedor, fragment1);
+                fragmentTransaction1.addToBackStack(null);
+                fragmentTransaction1.commit();
                 break;
         }
     }

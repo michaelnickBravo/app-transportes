@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/swipeRefreshLayoutSC"
-    tools:context=".ListadoConductoresO">
+    tools:context=".ListadoVehiculosO">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <SearchView
-            android:id="@+id/txtBusqueda"
+            android:id="@+id/txtBusquedaV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -21,9 +21,9 @@
             android:layout_height="10dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listadoConductoresRecyclerView"
+            android:id="@+id/listadoVehiculosRecyclerView"
             android:scrollbars="vertical"
-            tools:listitem="@layout/cardview_conductor_listado"
+            tools:listitem="@layout/cardview_vehiculo_listado"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>

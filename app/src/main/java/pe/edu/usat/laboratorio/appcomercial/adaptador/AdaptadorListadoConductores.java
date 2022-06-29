@@ -3,6 +3,7 @@ package pe.edu.usat.laboratorio.appcomercial.adaptador;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.os.Build;
 import android.text.TextUtils;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -19,6 +20,9 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 import pe.edu.usat.laboratorio.appcomercial.R;
 import pe.edu.usat.laboratorio.appcomercial.logica.Conductor;
@@ -29,11 +33,14 @@ public class AdaptadorListadoConductores extends RecyclerView.Adapter<AdaptadorL
 
     private Context context;
     public static ArrayList<Conductor> listaConductor;
+    public static ArrayList<Conductor> listaFiltrada;
     public int posicionItemSelecionadoRecyclerView;
 
     public AdaptadorListadoConductores(Context context) {
         this.context = context;
         listaConductor = new ArrayList<Conductor>();
+        listaFiltrada = new ArrayList<Conductor>();
+        listaFiltrada.addAll(listaConductor);
     }
 
     @Override
@@ -60,6 +67,21 @@ public class AdaptadorListadoConductores extends RecyclerView.Adapter<AdaptadorL
         holder.txtEmailList.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         holder.txtEmailList.setSelected(true);
 
+    }
+
+    public void filtrado(String txtBusqueda){
+        int longitud = txtBusqueda.length();
+        if(longitud == 0){
+            listaConductor.clear();
+            listaConductor.addAll(listaFiltrada);
+        }else{
+            List<Conductor> con = listaConductor.stream().filter(i -> i.getNum_brevete().toUpperCase().contains(txtBusqueda.toUpperCase())).collect(Collectors.toList());
+            List<Conductor> con1 = listaConductor.stream().filter(i -> i.getNombre().toUpperCase().contains(txtBusqueda.toUpperCase())).collect(Collectors.toList());
+            listaConductor.clear();
+            listaConductor.addAll(con);
+            listaConductor.addAll(con1);
+            notifyDataSetChanged();
+        }
     }
 
     @Override

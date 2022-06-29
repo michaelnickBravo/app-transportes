@@ -18,6 +18,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -31,13 +33,15 @@ import pe.edu.usat.laboratorio.appcomercial.logica.Conductor;
 import pe.edu.usat.laboratorio.appcomercial.util.Helper;
 
 
-public class ListadoConductoresO extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener{
+public class ListadoConductoresO extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener{
 
     RecyclerView listadoConductoresRecyclerView;
     SwipeRefreshLayout swipeRefreshLayoutSC;
 
     ArrayList<Conductor> listaConductorWS;
     AdaptadorListadoConductores adaptador;
+
+    SearchView txtbusqueda;
 
     ProgressDialog dialog;
 
@@ -70,6 +74,9 @@ public class ListadoConductoresO extends Fragment implements View.OnClickListene
         listadoConductoresRecyclerView.setHasFixedSize(true);
         listadoConductoresRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
+        txtbusqueda = view.findViewById(R.id.txtBusqueda);
+        txtbusqueda.setOnQueryTextListener(this);
+
         swipeRefreshLayoutSC = view.findViewById(R.id.swipeRefreshLayoutSC);
         swipeRefreshLayoutSC.setColorScheme(
                 android.R.color.holo_red_light,
@@ -86,7 +93,6 @@ public class ListadoConductoresO extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
-
     }
 
     @Override
@@ -96,6 +102,18 @@ public class ListadoConductoresO extends Fragment implements View.OnClickListene
         //cerrar la animacion del swipRefreshLayout
         this.swipeRefreshLayoutSC.setRefreshing(false);
     }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        adaptador.filtrado(s);
+        return false;
+    }
+
 
     private class listarConductoresTask extends AsyncTask<Void, Void, Boolean> {
 
@@ -167,7 +185,7 @@ public class ListadoConductoresO extends Fragment implements View.OnClickListene
         //mostrar un cuadro de dialogo que se esta descargando el catalogo de productos
         dialog = new ProgressDialog(this.getContext());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("Descargando el la lista de conductores, por favor espere");
+        dialog.setMessage("Descargando la lista de conductores, por favor espere");
         dialog.setCancelable(false);
         dialog.show();
 

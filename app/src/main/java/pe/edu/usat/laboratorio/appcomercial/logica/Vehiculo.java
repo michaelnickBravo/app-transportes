@@ -7,14 +7,7 @@ public class Vehiculo {
     private int numeroRuedas;
     private String estado;
     private String conductor;
-
-    public String getConductor() {
-        return conductor;
-    }
-
-    public void setConductor(String conductor) {
-        this.conductor = conductor;
-    }
+    private String num_brevete;
 
     public String getNum_brevete() {
         return num_brevete;
@@ -24,8 +17,13 @@ public class Vehiculo {
         this.num_brevete = num_brevete;
     }
 
-    private String num_brevete;
+    public String getConductor() {
+        return conductor;
+    }
 
+    public void setConductor(String conductor) {
+        this.conductor = conductor;
+    }
 
     public static ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
 
