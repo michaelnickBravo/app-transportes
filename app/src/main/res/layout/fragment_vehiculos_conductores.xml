@@ -9,7 +9,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="180dp"/>
+        android:layout_height="200dp"/>
 
     <Button
         android:id="@+id/btnRegistrarConductores"
@@ -53,6 +53,30 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:text="LISTAR VEHICULOS"
+        android:textColor="#fff" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <Button
+        android:id="@+id/btnAsignarVehiculosConductores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="ASIGNAR VEHICULOS A CONDUCTORES"
+        android:textColor="#fff" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <Button
+        android:id="@+id/btnListarVehiculosConductores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="LISTAR VEHICULOS CONDUCTORES"
         android:textColor="#fff" />
 
 

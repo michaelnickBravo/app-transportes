@@ -14,7 +14,7 @@ import android.widget.Button;
 
 public class VehiculosConductoresFrag extends Fragment implements View.OnClickListener{
 
-    Button btnRegistrarConductor, btnRegistrarVehiculos, btnListarConductor, btnListarVehiculos;
+    Button btnRegistrarConductor, btnRegistrarVehiculos, btnListarConductor, btnListarVehiculos, btnAsignarVehiculosConductores, btnListarVehiculosConductores;
 
     public VehiculosConductoresFrag() {
         // Required empty public constructor
@@ -49,6 +49,12 @@ public class VehiculosConductoresFrag extends Fragment implements View.OnClickLi
         btnListarVehiculos = view.findViewById(R.id.btnListarVehiculos);
         btnListarVehiculos.setOnClickListener(this);
 
+        btnAsignarVehiculosConductores = view.findViewById(R.id.btnAsignarVehiculosConductores);
+        btnAsignarVehiculosConductores.setOnClickListener(this);
+
+        btnListarVehiculosConductores = view.findViewById(R.id.btnListarVehiculosConductores);
+        btnListarVehiculosConductores.setOnClickListener(this);
+
         return view;
     }
 
@@ -56,6 +62,8 @@ public class VehiculosConductoresFrag extends Fragment implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnRegistrarConductores:
+                Intent intent= new Intent(getContext(), RegistrarConductores.class);
+                startActivity(intent);
                 break;
             case R.id.btnListarConductores:
                 ListadoConductoresO fragment = new ListadoConductoresO();
@@ -66,9 +74,22 @@ public class VehiculosConductoresFrag extends Fragment implements View.OnClickLi
                 fragmentTransaction.commit();
                 break;
             case R.id.btnRegistrarVehiculos:
+                Intent intent1= new Intent(getContext(), RegistroVehiculos.class);
+                startActivity(intent1);
                 break;
-
             case R.id.btnListarVehiculos:
+                ListaTodosVehiculos fragment2 = new ListaTodosVehiculos();
+                FragmentManager fragmentManager2 = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+                fragmentTransaction2.replace(R.id.contenedor, fragment2);
+                fragmentTransaction2.addToBackStack(null);
+                fragmentTransaction2.commit();
+                break;
+            case R.id.btnAsignarVehiculosConductores:
+                Intent intent2 = new Intent(getContext(), AsignarVehiculoConductor.class);
+                startActivity(intent2);
+                break;
+            case R.id.btnListarVehiculosConductores:
                 ListadoVehiculosO fragment1 = new ListadoVehiculosO();
                 FragmentManager fragmentManager1 = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();

@@ -54,9 +54,9 @@ public class AdaptadorListadoConductores extends RecyclerView.Adapter<AdaptadorL
     public void onBindViewHolder(AdaptadorListadoConductores.ViewHolder holder, int position) {
         //Mostrar los datos de cada producto en los controles del cardview
         Conductor conductor = listaConductor.get(position);
-        holder.txtNombreConductorList.setText(conductor.getNombre());
-        holder.txtBreveteList.setText(conductor.getNum_brevete());
-        holder.txtEmailList.setText(conductor.getEmail());
+        holder.txtNombreConductorList.setText("CONDUCTOR: " + conductor.getNombre());
+        holder.txtBreveteList.setText("BREVETE: " + conductor.getNum_brevete());
+        holder.txtEmailList.setText("EMAIL: " + conductor.getEmail());
 
         holder.txtNombreConductorList.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         holder.txtNombreConductorList.setSelected(true);
@@ -80,8 +80,8 @@ public class AdaptadorListadoConductores extends RecyclerView.Adapter<AdaptadorL
             listaConductor.clear();
             listaConductor.addAll(con);
             listaConductor.addAll(con1);
-            notifyDataSetChanged();
         }
+        notifyDataSetChanged();
     }
 
     @Override

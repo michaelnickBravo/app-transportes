@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".AsignarVehiculoConductor"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroVehiculos"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrarConductores"
+            android:exported="false" />
+        <activity
             android:name=".ReportarEstadoVehiculo"
             android:exported="false" />
         <activity
@@ -29,11 +38,11 @@
         <activity
             android:name=".MainActivityConductor"
             android:exported="false"
-            android:theme="@style/AppThemeCon"/>
+            android:theme="@style/AppThemeCon" />
         <activity
             android:name=".MainActivityOficinista"
             android:exported="false"
-            android:theme="@style/AppThemeCon"/>
+            android:theme="@style/AppThemeCon" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"

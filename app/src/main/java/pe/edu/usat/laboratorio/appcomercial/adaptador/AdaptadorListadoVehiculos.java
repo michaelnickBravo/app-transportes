@@ -42,11 +42,11 @@ public class AdaptadorListadoVehiculos extends RecyclerView.Adapter<AdaptadorLis
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Vehiculo vehiculo = listaVehiculo.get(position);
-        holder.txtPlacaVehiculoLis.setText(vehiculo.getPlaca());
-        holder.txtConductorVehiculoLis.setText(vehiculo.getConductor());
-        holder.txtNumBreveteVehiculoList.setText(vehiculo.getNum_brevete());
+        holder.txtPlacaVehiculoLis.setText("PLACA: " + vehiculo.getPlaca());
+        holder.txtConductorVehiculoLis.setText("CONDUCTOR: " + vehiculo.getConductor());
+        holder.txtNumBreveteVehiculoList.setText("N° BREVETE: " + vehiculo.getNum_brevete());
         //holder.txtNumRuedasLis.setText(vehiculo.getNumeroRuedas());
-        holder.txtSituacionVehiculoLis.setText(vehiculo.getEstado());
+        holder.txtSituacionVehiculoLis.setText("SITUACION ACTUAL: " + vehiculo.getEstado());
 
         holder.txtPlacaVehiculoLis.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         holder.txtPlacaVehiculoLis.setSelected(true);
@@ -77,8 +77,8 @@ public class AdaptadorListadoVehiculos extends RecyclerView.Adapter<AdaptadorLis
             listaVehiculo.addAll(ve);
             listaVehiculo.addAll(ve1);
             listaVehiculo.addAll(ve2);
-            notifyDataSetChanged();
         }
+        notifyDataSetChanged();
     }
 
     @Override

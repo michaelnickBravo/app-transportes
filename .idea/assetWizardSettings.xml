@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\ROBERT~1\AppData\Local\Temp\baseline_save_24.xml" />
+                                                <entry key="imagePath" value="C:\Users\ROBERT~1\AppData\Local\Temp\baseline_directions_car_24.xml" />
                                                 <entry key="opacityPercent" value="60" />
                                               </map>
                                             </option>
@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="file:/$PROJECT_DIR$/../../../Users/Roberto%20Montero/AppData/Local/Android/Sdk/icons/material/materialicons/save/baseline_save_24.xml" />
+                                                <entry key="url" value="file:/$PROJECT_DIR$/../../../Users/Roberto%20Montero/AppData/Local/Android/Sdk/icons/material/materialicons/directions_car/baseline_directions_car_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -68,7 +68,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_regsitrar" />
+                                      <entry key="outputName" value="ic_vehiculo" />
                                     </map>
                                   </option>
                                 </PersistentState>

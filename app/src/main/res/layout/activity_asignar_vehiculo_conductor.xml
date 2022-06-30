@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:orientation="vertical"
+    android:padding="9dp"
+    tools:context=".AsignarVehiculoConductor">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+    </Space>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:text="Conductores:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"/>
+            <Spinner
+                android:id="@+id/spConductores"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp">
+            </Space>
+
+            <TextView
+                android:text="Placas de Vehiculos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"/>
+
+            <Spinner
+                android:id="@+id/spVehiculos"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp">
+            </Space>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Fecha de inicio:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"/>
+
+                <EditText
+                    android:id="@+id/txtFechaInicio"
+                    android:layout_weight="1"
+                    android:hint="dd/mm/yyyy"
+                    android:focusable="false"
+                    android:inputType="date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"/>
+
+                <ImageView
+                    android:id="@+id/imgFechaInicio"
+                    app:srcCompat="@drawable/ic_calendario"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Fecha final:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/txtFechaFin"
+                    android:layout_weight="1"
+                    android:hint="dd/mm/yyyy"
+                    android:focusable="false"
+                    android:inputType="date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"/>
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"/>
+
+                <ImageView
+                    android:id="@+id/imgFechaFin"
+                    app:srcCompat="@drawable/ic_calendario"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <Button
+                android:id="@+id/btnAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:text="ASIGNAR"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

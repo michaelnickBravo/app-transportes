@@ -1,10 +1,14 @@
 package pe.edu.usat.laboratorio.appcomercial.logica;
 
+import java.util.ArrayList;
+
 public class Conductor {
     private String num_brevete;
     private String nombre;
     private String email;
     private String img;
+
+    public static ArrayList<Conductor> listaConductor = new ArrayList<>();
 
     public String getNum_brevete() {
         return num_brevete;

@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:orientation="vertical"
-        android:padding="8dp"
+        android:padding="9dp"
         tools:context=".ReportarEstadoVehiculo">
 
         <Space
@@ -29,16 +29,23 @@
                 <TextView
                     android:text="Placas de vehiculo:"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"/>
                 <Spinner
                     android:id="@+id/spPlacasVehiculos"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_height="35dp"/>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp">
+                </Space>
 
                 <TextView
                     android:text="Estados de vehiculos"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"/>
 
                 <Space
                     android:layout_width="wrap_content"
@@ -50,8 +57,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Ingrese aqui el estado de su vehiculo actualmente"
-                    android:textSize="13dp"
-                    />
+                    android:textSize="15dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textAllCaps="true"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
 
                 <Button
                     android:id="@+id/btnReportar"
@@ -60,11 +73,6 @@
                     android:backgroundTint="@color/black"
                     android:text="REPORTAR ESTADO"
                     android:textColor="#fff" />
-
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="10dp" />
-
 
             </LinearLayout>
         </ScrollView>

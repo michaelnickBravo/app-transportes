@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tools:context=".RegistroVehiculos">
+
+        <TextView
+            android:id="@+id/titulo_formulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO DE VEHICULOS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_img_vehiculo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_vehiculo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titulo_formulario" />
+
+        <EditText
+            android:id="@+id/edit_text_placa_vehiculo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Ingrese placa de vehiculo"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/circle_img_vehiculo"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <EditText
+            android:id="@+id/edit_text_num_ruedas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Ingrese numero de ruedas de vehiculo"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_placa_vehiculo"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <Button
+            android:id="@+id/boton_cancelar_ve"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/cancelar"
+            app:layout_constraintEnd_toStartOf="@id/boton_registrar_ve"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_num_ruedas" />
+
+        <Button
+            android:id="@+id/boton_registrar_ve"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="REGISTRAR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/boton_cancelar_ve"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_num_ruedas" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
