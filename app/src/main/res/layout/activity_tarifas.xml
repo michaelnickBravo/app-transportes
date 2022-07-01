@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tarifas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="TARIFA:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="18dp"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+        </Space>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtTarifa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresar la tarifa de toneladas por kilometro"
+            android:textSize="15dp"
+            android:layout_margin="3dp"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textAllCaps="true"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnTarifa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="ASIGNAR TARIFA"
+            android:textColor="#fff" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTarifas"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/cardview_tarifa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+</LinearLayout>
+
+

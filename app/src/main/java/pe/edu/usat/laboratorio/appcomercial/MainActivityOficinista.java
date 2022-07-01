@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -124,6 +125,9 @@ public class MainActivityOficinista extends AppCompatActivity implements Navigat
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.contenedor, fragment);
             fragmentTransaction.commit();
+        }else if (id == R.id.nav_tarifas) {
+            Intent intent = new Intent(this, Tarifas.class);
+            this.startActivity(intent);
         }else if (id == R.id.nav_reportar_estado) {
 
         } else if (id == R.id.nav_reportar_ubicacion) {
