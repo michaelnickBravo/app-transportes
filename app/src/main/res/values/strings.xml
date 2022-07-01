@@ -67,6 +67,7 @@
     <string name="registrar_pago">Registrar pago</string>
 
     <string-array name="filtro_cliente">
+        <item>Todos</item>
         <item>DNI o RUC</item>
         <item>Nombre o razon social</item>
         <item>Estado</item>
