@@ -23,10 +23,6 @@
             android:icon="@drawable/stc"
             android:title="Gestion de STC" />
 
-        <item
-            android:id="@+id/nav_estados_solicitudes"
-            android:icon="@drawable/estado"
-            android:title="Gestion de estados de STC" />
 
         <item
             android:id="@+id/nav_geolocalizacion"

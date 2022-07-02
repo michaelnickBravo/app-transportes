@@ -4,7 +4,34 @@ import java.util.ArrayList;
 
 public class Solicitud {
 
-    private String categoria, clase, descripcionCarga, direccionLlegada, direccionPartida, fecaPartida, horaPartida, tipo, hora_fecha;
+    private String categoria;
+    private String clase;
+    private String descripcionCarga;
+    private String direccionLlegada;
+    private String direccionPartida;
+    private String fecaPartida;
+    private String horaPartida;
+    private String tipo;
+    private String hora_fecha;
+    private String cliente;
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getNum_doc_cliente() {
+        return num_doc_cliente;
+    }
+
+    public void setNum_doc_cliente(String num_doc_cliente) {
+        this.num_doc_cliente = num_doc_cliente;
+    }
+
+    private String num_doc_cliente;
     private int id;
     private double monto, pesoCarga, tarifa;
 
@@ -111,4 +138,7 @@ public class Solicitud {
     public void setTarifa(double tarifa) {
         this.tarifa = tarifa;
     }
+
+
+
 }

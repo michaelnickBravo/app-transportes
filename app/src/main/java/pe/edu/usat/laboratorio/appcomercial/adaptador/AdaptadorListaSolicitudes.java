@@ -1,6 +1,7 @@
 package pe.edu.usat.laboratorio.appcomercial.adaptador;
 
 import android.content.Context;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,23 +10,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import pe.edu.usat.laboratorio.appcomercial.R;
-import pe.edu.usat.laboratorio.appcomercial.logica.Producto;
 import pe.edu.usat.laboratorio.appcomercial.logica.Solicitud;
+import pe.edu.usat.laboratorio.appcomercial.logica.Vehiculo;
 
 public class AdaptadorListaSolicitudes extends RecyclerView.Adapter<AdaptadorListaSolicitudes.ViewHolder> {
 
     private Context context;
     public static ArrayList<Solicitud> listaSolicitudes;
+    public static ArrayList<Solicitud> listaFiltrada;
+    public int posicionItemSeleccionadoRecyclerView;
 
     public AdaptadorListaSolicitudes(Context context) {
         this.context = context;
         listaSolicitudes = new ArrayList<>();
+        listaFiltrada = new ArrayList<Solicitud>();
+        listaFiltrada.addAll(listaSolicitudes);
     }
+
 
     @NonNull
     @Override
@@ -57,7 +63,7 @@ public class AdaptadorListaSolicitudes extends RecyclerView.Adapter<AdaptadorLis
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, View.OnLongClickListener {
 
         TextView txtDireccionLlegada, txtDireccionPartida, fechaPartida, horaPartida, monto, peso, tarifa;
 
@@ -70,7 +76,40 @@ public class AdaptadorListaSolicitudes extends RecyclerView.Adapter<AdaptadorLis
             monto = itemView.findViewById(R.id.txt_monto);
             peso = itemView.findViewById(R.id.txt_peso_carga);
             tarifa = itemView.findViewById(R.id.txt_tarifa);
+            itemView.setOnCreateContextMenuListener(this);
+            itemView.setOnLongClickListener(this);
         }
+        @Override
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            contextMenu.setHeaderTitle("Opciones");
+            contextMenu.add(0,1,0, "Gestionar Estado");
+            contextMenu.add(0,1,0, "Gestionar Asignaciones VC");
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            //Obtener la posición del item seleccionado en el RecyclerView
+            posicionItemSeleccionadoRecyclerView = this.getAdapterPosition();
+            return false;
+        }
+
     }
+    public   void filtrado(String txtBusquedaV){
+        int longitud = txtBusquedaV.length();
+        if(longitud == 0){
+            listaSolicitudes.clear();
+            listaSolicitudes.addAll(listaFiltrada);
+        }else{
+            List<Solicitud> ve = listaSolicitudes.stream().filter(i -> i.getDireccionPartida().toUpperCase().contains(txtBusquedaV.toUpperCase())).collect(Collectors.toList());
+            List<Solicitud> ve1 = listaSolicitudes.stream().filter(i -> i.getDireccionLlegada().toUpperCase().contains(txtBusquedaV.toUpperCase())).collect(Collectors.toList());
+            List<Solicitud> ve2 = listaSolicitudes.stream().filter(i -> i.getDescripcionCarga().toUpperCase().contains(txtBusquedaV.toUpperCase())).collect(Collectors.toList());
+            listaSolicitudes.clear();
+            listaSolicitudes.addAll(ve);
+            listaSolicitudes.addAll(ve1);
+            listaSolicitudes.addAll(ve2);
+        }
+        notifyDataSetChanged();
+    }
+
 
 }

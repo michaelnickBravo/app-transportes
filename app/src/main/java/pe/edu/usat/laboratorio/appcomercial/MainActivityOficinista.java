@@ -128,7 +128,11 @@ public class MainActivityOficinista extends AppCompatActivity implements Navigat
         }else if (id == R.id.nav_tarifas) {
             Intent intent = new Intent(this, Tarifas.class);
             this.startActivity(intent);
-        }else if (id == R.id.nav_reportar_estado) {
+        }else if (id == R.id.nav_solictudes) {
+            SolicitudesTransporteCarga fragment = new SolicitudesTransporteCarga();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.contenedor, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_reportar_ubicacion) {
 
