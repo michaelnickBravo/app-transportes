@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".dialogestadoCliente"
+            android:exported="false" />
+        <activity
             android:name=".Tarifas"
             android:exported="false" />
         <activity

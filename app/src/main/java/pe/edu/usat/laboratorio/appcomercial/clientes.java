@@ -4,11 +4,20 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import android.app.Dialog;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -25,6 +34,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -42,7 +52,7 @@ import pe.edu.usat.laboratorio.appcomercial.util.Helper;
 
 
 
-public class clientes  extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class clientes  extends Fragment  implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     RecyclerView clientesRecyclerView;
     EditText EditTextBusqueda;
     Spinner spinnerTipoBusqueda;
@@ -65,6 +75,7 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
 
 
 
@@ -91,6 +102,7 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
         clientesRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         listarClientes();
 
+
         //llamar al metodo para mostrar el catalogo
 
         new clientes.estadoClienteTask().execute();
@@ -101,6 +113,43 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
         return view;
     }
 
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        //Identificar la opción en la que el usuario hizo clic
+        switch (item.getItemId()){
+            case 1: //
+                int pos = adaptador.posicionItemSeleccionadoRecyclerView;
+                Intent intent = new Intent(getActivity(), dialogestadoCliente.class);
+                Bundle extras = new Bundle();
+
+                Cliente datos = listaServicioWS.get(pos);
+                String nombre=datos.getNombre();
+                String dni=datos.getDocumento();
+                String direccion=datos.getDireccion();
+                String tipo=datos.getTipo();
+                String telefono=datos.getTelefono();
+                String estado=datos.getEstado();
+
+                Log.e("cliente", datos.getNombre());
+                extras.putString("nombre", nombre);
+                extras.putString("dni", dni);
+                extras.putString("direccion", direccion);
+                extras.putString("tipo", tipo);
+                extras.putString("telefono", telefono);
+                extras.putString("estado", estado);
+
+                intent.putExtras(extras);
+                startActivity(intent);
+
+
+
+
+
+
+
+        }
+        return true;
+    }
 
     @Override
     public void onClick(View view) {
@@ -184,6 +233,7 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
 
                             //instanciar un objeto para guardar los datos
                             Cliente cliente = new Cliente();
+
                             cliente.setNombre(jsonCarga.getString("nombre"));
                             cliente.setDocumento(jsonCarga.getString("num_documento"));
                             cliente.setTipo(jsonCarga.getString("tipo de documento"));
@@ -262,6 +312,7 @@ public class clientes  extends Fragment implements View.OnClickListener, SwipeRe
         @Override
         protected Boolean doInBackground(Void... voids) {
             boolean resultado = false;
+
             try {
                 String URL_WS_clientes="";
                 HashMap<String, String> parametros = new HashMap<>();

@@ -1,6 +1,7 @@
 package pe.edu.usat.laboratorio.appcomercial.adaptador;
 
 import android.content.Context;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,14 @@ import java.util.ArrayList;
 import pe.edu.usat.laboratorio.appcomercial.R;
 import pe.edu.usat.laboratorio.appcomercial.logica.Cliente;
 
+
+import pe.edu.usat.laboratorio.appcomercial.util.Helper;
+
 public class AdaptadorListaClientes extends RecyclerView.Adapter<AdaptadorListaClientes.ViewHolder> {
 
     private Context context;
     public static ArrayList<Cliente> listaclientes;
+    public int posicionItemSeleccionadoRecyclerView;
 
     public AdaptadorListaClientes(Context context) {
         this.context = context;
@@ -54,7 +59,7 @@ public class AdaptadorListaClientes extends RecyclerView.Adapter<AdaptadorListaC
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, View.OnLongClickListener {
 
         TextView txtNombre, txtDni, txtTipo, txtDireccion, txtTelefono, txtEstado;
 
@@ -66,7 +71,22 @@ public class AdaptadorListaClientes extends RecyclerView.Adapter<AdaptadorListaC
             txtDireccion = itemView.findViewById(R.id.txt_direccion);
             txtTelefono = itemView.findViewById(R.id.txt_telefono);
             txtEstado = itemView.findViewById(R.id.txt_estado);
+            itemView.setOnCreateContextMenuListener(this);
+            itemView.setOnLongClickListener(this);
 
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            contextMenu.setHeaderTitle("Opciones");
+            contextMenu.add(0,1,0, "Actualizar Estado");
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            //Obtener la posición del item seleccionado en el RecyclerView
+            posicionItemSeleccionadoRecyclerView = this.getAdapterPosition();
+            return false;
         }
     }
 
