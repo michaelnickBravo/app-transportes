@@ -83,7 +83,7 @@ public class AdaptadorListaSolicitudes extends RecyclerView.Adapter<AdaptadorLis
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
             contextMenu.setHeaderTitle("Opciones");
             contextMenu.add(0,1,0, "Gestionar Estado");
-            contextMenu.add(0,1,0, "Gestionar Asignaciones VC");
+            contextMenu.add(0,2,0, "Gestionar Asignaciones VC");
         }
 
         @Override

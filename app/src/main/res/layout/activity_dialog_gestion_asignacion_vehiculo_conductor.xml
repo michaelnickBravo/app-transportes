@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DialogGestionestadosSolicitud"
+    tools:context=".dialog_gestion_asignacion_Vehiculo_conductor"
     android:paddingHorizontal="15dp"
     >
 
@@ -94,7 +93,7 @@
             android:text="Direccion de Llegada" />
 
         <TextView
-            android:text="NUEVO ESTADO"
+            android:text="ASIGNAR VEHICULO"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,25 +103,13 @@
 
 
         <Spinner
-            android:id="@+id/estadosSTC"
+            android:id="@+id/vehiculo_conductor"
             android:layout_width="300dp"
             android:layout_height="34dp"
 
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="170dp"
             tools:layout_editor_absoluteY="55dp" />
-        <EditText
-            android:id="@+id/edit_text_observacion"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Ingrese la observacion"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/circle_img_vehiculo"
-            android:singleLine="true"
-            android:ellipsize="end"/>
 
 
 
@@ -132,14 +119,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
-            android:text="REGISTRAR ESTADO"
+            android:text="ASIGNAR VEHICULO"
             android:textColor="#fff" />
 
+        <TextView
+            android:text="VEHICULOS ASIGNADOS:"
 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewEstados"
+            android:id="@+id/recyclerViewVehiculos"
             android:scrollbars="vertical"
-            tools:listitem="@layout/cardview_estados_solicitud"
+            tools:listitem="@layout/cardview_vehiculo_listado"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>

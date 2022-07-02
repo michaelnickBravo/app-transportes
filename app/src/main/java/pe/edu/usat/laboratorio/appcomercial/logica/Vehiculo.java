@@ -9,6 +9,16 @@ public class Vehiculo {
     private String conductor;
     private String num_brevete;
 
+    public int getId_vehiculo_conductor() {
+        return id_vehiculo_conductor;
+    }
+
+    public void setId_vehiculo_conductor(int id_vehiculo_conductor) {
+        this.id_vehiculo_conductor = id_vehiculo_conductor;
+    }
+
+    private int id_vehiculo_conductor;
+
     public String getNum_brevete() {
         return num_brevete;
     }

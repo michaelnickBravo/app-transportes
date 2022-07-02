@@ -96,6 +96,35 @@ public class SolicitudesTransporteCarga extends Fragment{
 
                 intent.putExtras(extras);
                 startActivity(intent);
+                break;
+            case 2: //
+                int pos1 = adaptadorListaSolicitudes.posicionItemSeleccionadoRecyclerView;
+                Intent intent1 = new Intent(getActivity(), dialog_gestion_asignacion_Vehiculo_conductor.class);
+                Bundle extras1 = new Bundle();
+                Log.e("proror","gwddskjsm,fsk");
+
+                Solicitud datos1 = listaSolicitudesWS.get(pos1);
+                String id1=String.valueOf(datos1.getId());
+                String dni1=datos1.getNum_doc_cliente();
+                String cliente1=datos1.getCliente();
+                String clase1=datos1.getClase();
+                String direccionP1=datos1.getDireccionPartida();
+                String fecha1=datos1.getFecaPartida();
+                String direccionL1=datos1.getDireccionLlegada();
+                String tipo1=datos1.getTipo();
+
+                extras1.putString("id", id1);
+                extras1.putString("dni", dni1);
+                extras1.putString("cliente", cliente1);
+                extras1.putString("direccionP", direccionP1);
+                extras1.putString("fecha", fecha1);
+                extras1.putString("direccionL", direccionL1);
+                extras1.putString("clase", clase1);
+                extras1.putString("tipo", tipo1);
+
+                intent1.putExtras(extras1);
+                startActivity(intent1);
+                break;
 
         }
         return true;
