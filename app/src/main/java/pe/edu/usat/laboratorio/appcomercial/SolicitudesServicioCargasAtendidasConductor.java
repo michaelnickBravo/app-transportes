@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +94,9 @@ public class SolicitudesServicioCargasAtendidasConductor extends Fragment implem
             try {
                 String URL_WS_SolicitudCarga = Helper.BASE_URL_WS + "/conductor/listar/solicitud_atendida";
                 HashMap<String, String> parametros = new HashMap<>();
-                parametros.put("id_estado_solicitud", String.valueOf(Sesion.ESTADO_ID));
+                //parametros.put("id_estado_solicitud", String.valueOf(Sesion.ESTADO_ID));
+                //parametros.put("id_estado_solicitud", String.valueOf(8));
+                Log.e("ididid",String.valueOf(Sesion.ESTADO_ID));
                 parametros.put("num_brevete", Sesion.NUM_BREVETE);
 
                 //realizar la peticion del servicio web
