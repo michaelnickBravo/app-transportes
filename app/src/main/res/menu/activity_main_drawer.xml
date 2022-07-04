@@ -7,25 +7,26 @@
 
         <item
             android:id="@+id/nav_registrar_solicitud"
-            android:icon="@drawable/ic_ventas"
+            android:icon="@drawable/ic_registrar_solicitud"
             android:title="@string/registrar_solicitud" />
 
         <item
             android:id="@+id/nav_listar_solicitud"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_listar_solicitudes"
             android:title="@string/listar_solicitudes" />
         <item
             android:id="@+id/nav_pagar_solicitud"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_pagar_solicitud"
             android:title="@string/pagar_solicitud" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
     </group>
+
+    <item android:title="Sesion">
+        <menu>
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/ic_cerrar_sesion"
+                android:title="Cerrar Sesion" />
+        </menu>
+    </item>
 
 </menu>

@@ -259,7 +259,6 @@ public class RegistrarSolicitudFragment extends Fragment implements View.OnClick
     }
 
     private class TipoCargaTask extends AsyncTask<Void, Void, Boolean> {
-
         @Override
         protected Boolean doInBackground(Void... voids) {
             boolean resultado = false;

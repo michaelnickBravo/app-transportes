@@ -37,7 +37,10 @@ public class MainActivityConductor extends AppCompatActivity implements Navigati
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_conductor);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
+
+        setTitle("Conductor");
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

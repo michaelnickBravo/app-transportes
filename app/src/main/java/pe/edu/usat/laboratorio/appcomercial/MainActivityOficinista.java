@@ -34,6 +34,7 @@ public class MainActivityOficinista extends AppCompatActivity implements Navigat
         setContentView(R.layout.activity_main_oficinista);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+        setTitle("Oficinista");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_oficinista);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

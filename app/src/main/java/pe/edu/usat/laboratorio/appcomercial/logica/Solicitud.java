@@ -31,7 +31,7 @@ public class Solicitud {
         this.num_doc_cliente = num_doc_cliente;
     }
 
-    private String num_doc_cliente;
+    private String num_doc_cliente, estado;
     private int id;
     private double monto, pesoCarga, tarifa;
 
@@ -139,6 +139,11 @@ public class Solicitud {
         this.tarifa = tarifa;
     }
 
+    /*public String getEstado() {
+        return estado;
+    }
 
-
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }*/
 }

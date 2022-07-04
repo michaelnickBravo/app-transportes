@@ -66,7 +66,6 @@ public class clientes  extends Fragment  implements View.OnClickListener, SwipeR
     ProgressDialog dialog;
 
 
-
     public clientes() {
         // Required empty public constructor
     }
@@ -75,9 +74,6 @@ public class clientes  extends Fragment  implements View.OnClickListener, SwipeR
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-
-
 
     }
 
@@ -140,12 +136,6 @@ public class clientes  extends Fragment  implements View.OnClickListener, SwipeR
 
                 intent.putExtras(extras);
                 startActivity(intent);
-
-
-
-
-
-
 
         }
         return true;

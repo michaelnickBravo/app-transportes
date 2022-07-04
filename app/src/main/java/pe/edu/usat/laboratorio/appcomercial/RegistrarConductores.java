@@ -29,7 +29,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import pe.edu.usat.laboratorio.appcomercial.util.Gallery;
 import pe.edu.usat.laboratorio.appcomercial.util.Helper;
 
-public class RegistrarConductores extends AppCompatActivity implements View.OnClickListener{
+public class
+RegistrarConductores extends AppCompatActivity implements View.OnClickListener{
 
     public static final int REQUEST_PICK = 1;
 

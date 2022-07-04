@@ -61,8 +61,9 @@ import pe.edu.usat.laboratorio.appcomercial.R;
 
 public class Helper {
     public static final String APP_NAME = "Comercial: ServiciosWeb";
-    //public static final String BASE_URL_WS = "http://10.0.2.2:3007";
-    public static final String BASE_URL_WS = "http://192.168.2.131:81";
+    //public static final String BASE_URL_WS = "http://10.0.2.2:3007"
+    //public static final String BASE_URL_WS = "http://192.168.2.131:81"; //IP ORIGINAL
+    public static final String BASE_URL_WS = "http://192.168.0.5:82";
 
     public String requestHttpPost(String requestURL, HashMap<String, String> postDataParams) throws JSONException {
 

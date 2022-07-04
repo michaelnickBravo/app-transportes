@@ -84,6 +84,8 @@ public class AdaptadorListaSolicitudes extends RecyclerView.Adapter<AdaptadorLis
             contextMenu.setHeaderTitle("Opciones");
             contextMenu.add(0,1,0, "Gestionar Estado");
             contextMenu.add(0,2,0, "Gestionar Asignaciones VC");
+            contextMenu.add(0,3,0, "Ver detalle");
+            contextMenu.add(0,4,0, "Anular solicitud");
         }
 
         @Override
@@ -94,7 +96,7 @@ public class AdaptadorListaSolicitudes extends RecyclerView.Adapter<AdaptadorLis
         }
 
     }
-    public   void filtrado(String txtBusquedaV){
+    public void filtrado(String txtBusquedaV){
         int longitud = txtBusquedaV.length();
         if(longitud == 0){
             listaSolicitudes.clear();
